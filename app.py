@@ -9,7 +9,6 @@ from sklearn.impute import SimpleImputer
 # Load models
 logistic_regression_model = joblib.load('logistic_regression_model.pkl')
 adaboost_model = joblib.load('adaboost_model.pkl')
-random_forest_model = joblib.load('random_forest_model.pkl')
 
 # Define the preprocessors
 numeric_features = ['tenure', 'MonthlyCharges', 'TotalCharges', 'SeniorCitizen']
@@ -101,7 +100,4 @@ if st.button('Predict with AdaBoost'):
     prediction = adaboost_model.predict(input_data)
     st.write(f'Prediction: {prediction[0]}')
 
-if st.button('Predict with Random Forest'):
-    prediction = random_forest_model.predict(input_data)
-    st.write(f'Prediction: {prediction[0]}')
 
