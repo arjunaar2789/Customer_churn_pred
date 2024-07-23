@@ -1,4 +1,3 @@
-pip install joblib
 import streamlit as st
 import pandas as pd
 import joblib
@@ -90,7 +89,7 @@ st.subheader('User Input features')
 st.write(input_df)
 
 # Preprocess input
-input_data = preprocessor.fit_transform(input_df)
+input_data = preprocessor.transform(input_df)
 
 # Model predictions
 if st.button('Predict with Logistic Regression'):
@@ -100,5 +99,6 @@ if st.button('Predict with Logistic Regression'):
 if st.button('Predict with AdaBoost'):
     prediction = adaboost_model.predict(input_data)
     st.write(f'Prediction: {prediction[0]}')
+
 
 
